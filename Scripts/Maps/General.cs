@@ -43,15 +43,14 @@ public class General : MonoBehaviour {
         //Counter gain -0.3 points every second
         Counter -= 0.3f;
         //if the player win the match
-        if (Counter < Goal)
+        if (Player.transform.position.z >= Goal)
         {
            
             //the next level stage appear
             next.SetActive(true);
             //the current level disappear
             here.SetActive(false);
-            Counter = 0;
-
+            Player.transform.position = PlayerInitialPosition;
         }
 	}
 }
